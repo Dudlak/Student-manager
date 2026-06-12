@@ -9,8 +9,10 @@ Container {
     property int fontSize: Theme.normalFontSize
     property string placeholder: ""
     property alias text: textInput.text
+    property QtObject validator: null
 
     signal textChanged()
+    signal accepted()
 
     TextInput {
         id: textInput
@@ -25,6 +27,7 @@ Container {
         color: Theme.textColor
 
         selectByMouse: true
+        validator: root.validator
 
         Rectangle {
             id: line
@@ -44,6 +47,7 @@ Container {
         }
 
         onTextChanged: root.textChanged()
+        onAccepted: root.accepted()
 
     }
 

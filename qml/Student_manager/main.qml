@@ -29,26 +29,31 @@ Rectangle {
                 MenuItem{
                     text: "Главная"
                     onClicked: content.source = "screens/mainScreen.qml"
+                    fontSize: Theme.largeFontSize
                 }
 
                 MenuItem{
                     text: "Предметы"
                     onClicked: content.source = "screens/subjectsScreen.qml"
+                    fontSize: Theme.largeFontSize
                 }
 
                 MenuItem{
                     text: "Расписание"
                     onClicked: content.source = "screens/scheduleScreen.qml"
+                    fontSize: Theme.largeFontSize
                 }
 
                 MenuItem{
                     text: "Дела"
                     onClicked: content.source = "screens/toDoScreen.qml"
+                    fontSize: Theme.largeFontSize
                 }
 
                 MenuItem{
                     text: "Настройки"
                     onClicked: content.source = "screens/settingsScreen.qml"
+                    fontSize: Theme.largeFontSize
                 }
             }
 

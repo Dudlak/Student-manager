@@ -111,10 +111,10 @@ void AppTheme::loadLightTheme()
 void AppTheme::loadDarkTheme()
 {
     m_themeName = "Dark";
-    m_backgroundColor = QColor(33, 33, 33);   // #212121
-    m_accentColor = QColor(33, 150, 243);     // #2196F3
-    m_textColor = QColor(220, 220, 220);
-    m_borderColor = QColor(220, 220, 220);
+    m_backgroundColor = QColor("#212121");
+    m_accentColor = QColor("#5E0B0B");
+    m_textColor = QColor("#dcdcdc");
+    m_borderColor = QColor("#dcdcdc");
 
     m_smallFontSize = 15;
     m_normalFontSize =20;
@@ -131,7 +131,7 @@ void AppTheme::loadDarkTheme()
 
 void AppTheme::saveSettings()
 {
-    QSettings settings("Dudlak", "UITest");
+    QSettings settings("Dudlak", "Student_manager");
 
     // Цвета
     settings.setValue("theme/backgroundColor", m_backgroundColor);
@@ -158,7 +158,7 @@ void AppTheme::saveSettings()
 
 void AppTheme::loadSettings()
 {
-    QSettings settings("Dudlak", "UITest");
+    QSettings settings("Dudlak", "Student_manager");
 
     if (settings.contains("theme/backgroundColor")) {
         m_backgroundColor = settings.value("theme/backgroundColor").value<QColor>();

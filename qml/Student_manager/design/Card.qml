@@ -1,6 +1,7 @@
-// import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
 
+// хорошую карточку с правильным позиционированием вложенных объектов
+// относительно заголовка можно написать только из c++
 Container {
     id: root
     width: title.implicitWidth + title.anchors.margins*2

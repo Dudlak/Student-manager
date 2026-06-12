@@ -12,11 +12,13 @@ Container {
     height: titleText.implicitHeight + 10
 
     property string text: ""
+    property int fontSize: Theme.titleFontSize
 
     Text {
         id: titleText
         text: root.text
-        font.pixelSize: Theme.titleFontSize
+        font.pixelSize: root.fontSize
         anchors.centerIn: parent
+        color: Theme.textColor
     }
 }

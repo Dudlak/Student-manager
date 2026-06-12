@@ -34,7 +34,7 @@ Rectangle {
         effect: DropShadow {
             blurRadius: 10.0      // Сила размытия (чем больше, тем мягче тень)
             offset: Qt.point(-5, -5) // Смещение тени: (5px вправо, 5px вниз)
-            color:Qt.lighter(Theme.backgroundColor, 1.3)
+            color:Qt.lighter(Theme.backgroundColor, 1.2)
         }
     }
 
