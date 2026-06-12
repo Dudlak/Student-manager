@@ -1,15 +1,24 @@
 // import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
+import "../design"
 
-Rectangle {
+Container {
     anchors.fill: parent
-    anchors.margins: 10
-    color: "pink"
 
-    Text {
+    Header {
         id: title
         text: "MAIN SCREEN"
-        font.pixelSize: 100
-        anchors.centerIn: parent
+    }
+
+    Card {
+        anchors.top: title.bottom
+        anchors.left: parent.left
+        anchors.margins: 20
+
+        width: 500
+
+        title: "Простая карточка"
+        text: "Пример очень-очень длинного и невлезающего в карточку текста. " +
+              "Это покажет нам как карточка реагирует и адаптируется к такой длинне строки"
     }
 }

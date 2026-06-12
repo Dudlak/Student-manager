@@ -5,70 +5,70 @@ import "design"
 Rectangle {
     id: root
     width: 1500
-    height: 1000
+    height: 700
+    color: Theme.backgroundColor
 
-    Item {
-        id: navigationArea
+    Item { id: navigationArea
         width: 500
+
         anchors {
             left: root.left
             top: root.top
             bottom: root.bottom
         }
 
-        Rectangle {
+        Menu {
             anchors.fill: parent
-            color: "#ff0000"
-        }
+            anchors.margins: 10
 
-        Column {
-            anchors.fill: parent
+            Column {
+                anchors.fill: parent
+                anchors.margins: 15
+                spacing: 15
 
-            MenuItem{
-                text: "Главная"
-                onClicked: content.source = "mainScreen.qml"
+                MenuItem{
+                    text: "Главная"
+                    onClicked: content.source = "screens/mainScreen.qml"
+                }
+
+                MenuItem{
+                    text: "Предметы"
+                    onClicked: content.source = "screens/subjectsScreen.qml"
+                }
+
+                MenuItem{
+                    text: "Расписание"
+                    onClicked: content.source = "screens/scheduleScreen.qml"
+                }
+
+                MenuItem{
+                    text: "Дела"
+                    onClicked: content.source = "screens/toDoScreen.qml"
+                }
+
+                MenuItem{
+                    text: "Настройки"
+                    onClicked: content.source = "screens/settingsScreen.qml"
+                }
             }
 
-            MenuItem{
-                text: "Предметы"
-                onClicked: content.source = "subjectsScreen.qml"
-            }
-
-            MenuItem{
-                text: "Расписание"
-                onClicked: content.source = "scheduleScreen.qml"
-            }
-
-            MenuItem{
-                text: "Дела"
-                onClicked: content.source = "toDoScreen.qml"
-            }
-
-            MenuItem{
-                text: "Настройки"
-                onClicked: content.source = "settingsScreen.qml"
-            }
         }
     }
 
-    Item {
-        id: contentArea
+    Item { id: contentArea
+
         anchors {
             left: navigationArea.right
             top: root.top
             bottom: root.bottom
             right: root.right
-        }
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#0000ff"
+            margins: 10
         }
 
         Loader {
             id: content
             anchors.fill: parent
-            source: "mainScreen.qml"
+            source: "screens/mainScreen.qml"
         }
     }
 }

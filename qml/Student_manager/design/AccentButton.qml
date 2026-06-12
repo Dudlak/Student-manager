@@ -1,36 +1,32 @@
 // import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
 
-Rectangle {
+Container {
     id: root
-
-    width: itemText.paintedWidth + padding*2
-    height: itemText.paintedHeight + padding*2
-
-    anchors {
-        left: parent.left
-        right: parent.right
-    }
+    width: buttonText.paintedWidth + padding*2
+    height: buttonText.paintedHeight + padding*2
 
     color: Theme.accentColor
-    radius: Theme.borderRadius
 
-
+    property string text: ""
     property int padding:10
     property int fontSize: Theme.normalFontSize
-    property string text: ""
 
     signal clicked()
 
-    property alias shadow: shadow
-    AccentShadow{ id: shadow }
+    radius: Theme.borderRadius
+    border {
+        width: 2
+        color: Theme.borderColor
+    }
 
     Text {
-        id: itemText
+        id: buttonText
         anchors.centerIn: parent
-        font.pixelSize: parent.fontSize
-        text: parent.text
+        text: root.text
+        font.pixelSize: root.fontSize
         color: Theme.textColor
+
     }
 
     MouseArea {
@@ -47,8 +43,8 @@ Rectangle {
             shadow.visible = true
             root.scale = 1
         }
+
         onClicked: root.clicked()
     }
 
 }
-
